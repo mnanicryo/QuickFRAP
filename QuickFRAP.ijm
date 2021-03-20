@@ -171,3 +171,15 @@ half_life = Math.log(0.5)/-tau;
 IJ.log("Mobile Fraction = " + mobile);
 IJ.log("Immobile Fraction = " + immobile);
 IJ.log("Half life = " + half_life);
+
+
+ // Option for diffusion coefficient calculation
+diffuse_bool = getBoolean("Calculate the diffusion coefficient? (You should have used the circle tool for selecting the bleached region for this to work properly)");
+if (diffuse_bool==1) {
+	bleach_radius = getNumber("Enter the radius (in um) of the bleached region", 1);
+	diffuse_coeff = (0.75*Math.sqr(bleach_radius))/(PI*half_life);
+	IJ.log("Diffusion coefficient (um^2 / s) = " + diffuse_coeff)
+	
+} else {
+	
+}
